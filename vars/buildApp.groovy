@@ -1,4 +1,7 @@
 def call() {
-    echo "--- Building Application ---"
-    sh 'echo "App build complete"'
+    echo "--- Compiling Java Application with Maven ---"
+    
+    dir('CI-CD/Lab 23 - CICD Pipeline Implementation with Jenkins Agents and Shared Libraries/Jenkins_App') {
+        sh "mvn clean package -DskipTests"
+    }
 }
