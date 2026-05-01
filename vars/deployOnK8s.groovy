@@ -2,7 +2,7 @@ def call() {
     withCredentials([file(credentialsId: 'kubeconfig', variable: 'KUBECONFIG')]) {
         sh '''
             export KUBECONFIG=$KUBECONFIG
-            kubectl apply -f $(pwd)/deployment.yaml
+            kubectl apply -f "$WORKSPACE/deployment.yaml"
         '''
     }
 }
