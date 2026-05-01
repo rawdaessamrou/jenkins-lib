@@ -1,5 +1,1 @@
-def call(String imageName, String credentialsId) {
-    docker.withRegistry('', credentialsId) {
-        sh "docker push ${imageName}"
-    }
-}
+pushImage(env.DOCKER_IMAGE, DOCKER_CREDENTIALS_ID)
