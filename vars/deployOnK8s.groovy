@@ -4,4 +4,5 @@ def call() {
             export KUBECONFIG="$KUBECONFIG_PATH"
             kubectl apply -f "${WORKSPACE}/deployment.yaml"
         '''
-    }
+    } 
+} 
