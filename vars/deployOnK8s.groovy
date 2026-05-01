@@ -2,7 +2,7 @@ def call(String kubeconfig) {
     withCredentials([file(credentialsId: kubeconfig, variable: 'KUBECONFIG')]) {
         sh '''
             export KUBECONFIG=$KUBECONFIG
-            kubectl apply -f k8s/
+            kubectl apply -f deployment.yaml
         '''
     }
 }
