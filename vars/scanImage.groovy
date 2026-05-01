@@ -1,4 +1,11 @@
 def call(String imageName) {
     echo "--- Scanning Image: ${imageName} ---"
-    sh "trivy image --timeout 20m --exit-code 0 --skip-db-update --scanners vuln ${imageName}"
+    sh """
+        trivy image \
+          --timeout 20m \
+          --exit-code 0 \
+          --db-repository public.ecr.aws/aquasecurity/trivy-db \
+          --scanners vuln \
+          ${imageName}
+    """
 }
